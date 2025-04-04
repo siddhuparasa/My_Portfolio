@@ -23,7 +23,7 @@ a {
 
 /* Navbar Styles */
 .navbar {
-  background: rgba(0, 0, 0, 0.6); /* Transparent glass effect */
+  background: linear-gradient(135deg, #e7e1e1, #02283a);/* Transparent glass effect */
   backdrop-filter: blur(10px); /* Blur effect */
   color: #ffffff;
   padding: 12px 0;
@@ -43,7 +43,7 @@ a {
 .navbar .logo {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   font-family: "Raleway", sans-serif;
   font-family: "great vibes", cursive;
   letter-spacing: 2px;
@@ -52,7 +52,7 @@ a {
 
 .navbar .logo:hover {
   transform: scale(1.05);
-  color: #2d7f9e;
+  color: #033e53;
 }
 
 /* Navbar Menu */
@@ -98,7 +98,7 @@ a {
 
 /* Hover Effect */
 .navbar ul li a:hover {
-  color: #2d7f9e;
+  color: #000000;
 }
 
 /* Mobile Responsive */
@@ -129,7 +129,7 @@ a {
 
 .home {
   background-size: cover;
-  background-image: "assets/images/home-bg.webp"; /* Background image */
+  background: linear-gradient(135deg, #332c2c, #1a1a1a);
   background-position: center;
   background-attachment: fixed;
   color: linear-gradient(to right, #000428, #004e92); /* Greenish blue text */
@@ -205,7 +205,8 @@ a {
 }
 /* About Section */
 .about {
-  background-color: #000; /* Black background */
+  background: linear-gradient(135deg, #332c2c, #1a1a1a);/* Black background */
+  /* Black background */
   padding: 150px 50px;
   text-align: center;
   font-family: "Poppins", sans-serif; /* Clean & modern font */
@@ -265,144 +266,115 @@ a {
 }
 
 
-/* Skills Section */
+/* Global Styles */
 .skills {
-  background-color: #000000; /* Black background */
-  padding: 100px 50px;
   text-align: center;
-  color: #fff;
-  font-family: "Poppins", sans-serif; /* Clean & modern font */
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #332c2c, #1a1a1a);
+  color: white;
 }
 
+/* Section Heading */
 .skills h2 {
-  font-size: 2.8rem;
-  margin-bottom: 30px;
-  color: #00aaff; /* Cool blue heading */
+  font-size: 2.5rem;
   font-weight: 700;
-  font-family: "Merriweather", serif; /* Elegant serif font */
   text-transform: uppercase;
+  margin-bottom: 30px;
   letter-spacing: 2px;
 }
 
-/* Grid Layout */
+/* Skill Container */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 25px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   padding: 20px;
+  justify-items: center;
 }
 
-/* Individual Skill Cards */
-.skill {
-  background: linear-gradient(135deg, #111111, #2d7f9e); /* Greenish blue gradient */
-  padding: 20px;
+/* Skill Category Box */
+.skill-category {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.skill:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+.skill-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Skill Logos */
-.skill img {
+/* Category Header */
+.category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.category-logo {
   width: 70px;
   height: 70px;
+  object-fit: contain;
   margin-bottom: 10px;
-  transition: transform 0.3s ease-in-out;
 }
 
-.skill:hover img {
-  transform: rotate(10deg);
+.category-header h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Skill Text */
-.skill span {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff; /* White skill text */
-  font-family: "Lora", serif; /* Professional & readable font */
+/* Skill List */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
   .skills h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .skill {
-    padding: 15px;
-  }
-
-  .skill img {
+  .category-logo {
     width: 60px;
     height: 60px;
   }
-
-  .skill span {
-    font-size: 1rem;
-  }
-}
-
-/* Skills Section */
-.skills {
-  background-color: #000000; /* Black background */
-  padding: 100px 50px;
-  text-align: center;
-  color: #fff;
-}
-
-.skills h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #ffffff; /* White heading */
-}
-
-/* Grid Layout */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 25px;
-  justify-content: center;
-}
-
-/* Individual Skill Cards */
-.skill {
-  background: linear-gradient(135deg, #111111, #2d7f9e); /* Greenish blue gradient */
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.skill:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Skill Logos */
-.skill img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-}
-
-/* Skill Text */
-.skill span {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff; /* White skill text */
 }
 
 /* Projects Section */
 .projects {
-  background-color: #000; /* Deep black background */
+  background: linear-gradient(135deg, #332c2c, #1a1a1a);
   padding: 150px 50px;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -492,145 +464,64 @@ a {
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@700&display=swap');
-
+/* Container holding the contact text and icons */
 /* Contact Section */
 .contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 30px;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  min-height: 100vh;
-}
-
-/* Background Card (Glassmorphism Effect) */
-.contact-card {
-  background: rgba(25, 25, 25, 0.85); /* Dark translucent card */
-  padding: 70px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-  max-width: 700px;
-  width: 90%;
+  background: linear-gradient(135deg, #332c2c, #1a1a1a); /* Black background */
+  padding: 200px 50px;
   text-align: center;
-  color: #e0e0e0;
-  backdrop-filter: blur(12px); /* Glass effect */
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  font-family: "Poppins", sans-serif; /* Clean & modern font */
 }
-
-/* Animated Border Effect */
-.contact-card::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #ff6a00, #ee0979, #06beb6, #ff6a00);
-  background-size: 400% 400%;
-  z-index: -1;
-  filter: blur(10px);
-  animation: animated-border 6s infinite linear alternate;
-}
-
-@keyframes animated-border {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Hover Scaling */
-.contact-card:hover {
-  transform: scale(1.03);
-}
-
-/* Heading */
-.contact-card h2 {
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #050505; /* Worn-out deep orange */
-  font-family: "Merriweather", serif;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Contact Info */
-.contact-info {
+.contact-card {
+  /* existing styles here... */
   display: flex;
+  background-color: #22232a;
+  padding: 70px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
   flex-direction: column;
   align-items: center;
-  gap: 30px;
 }
 
-/* Contact Text */
-.contact-info p {
-  font-size: 1.2rem;
+/* Optional: Add spacing between text and icons */
+.contact-card p {
+  margin-bottom: 30px;
+}
+
+/* Icons wrapper - already well set, just keeping for clarity */
+.contact-info {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  gap: 20px;
-  font-weight: 500;
-  color: #f0f0f0;
-  font-family: "Poppins", sans-serif;
-  transition: all 0.3s ease-in-out;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px; /* space between text and icons */
 }
 
-/* Contact Icons */
+/* Icon styles */
+.contact-info a {
+  display: inline-block;
+  animation: floating 3s infinite ease-in-out;
+}
+
 .contact-info a img {
-  width: 60px;
-  height: 60px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
- 
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-/* Neon Glow Hover Effect */
 .contact-info a img:hover {
-  transform: scale(0.8);
-  box-shadow: 0 0 0px rgba(0, 0, 0, 0.9);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact {
-    padding: 60px 20px;
-  }
-
-  .contact-card {
-    padding: 50px;
-  }
-
-  .contact-card h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact-info p {
-    font-size: 1rem;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.9));
 }
 
 
 
-
-/* Footer Section */
+/* ---------------- Footer ---------------- */
 footer {
-  background-color: #111111; /* Slightly lighter black footer */
-  color: #ffffff; /* White footer text */
+  background-color: #111111;
+  color: #ffffff;
   padding: 20px 0;
   text-align: center;
 }
@@ -645,7 +536,7 @@ footer ul li {
 }
 
 footer ul li a {
-  color: #ffffff; /* White footer links */
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -653,13 +544,14 @@ footer ul li a:hover {
   text-decoration: underline;
 }
 
-/* Keyframe Animations */
+/* ---------------- Animations ---------------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
-
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }

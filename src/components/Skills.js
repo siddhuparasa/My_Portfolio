@@ -1,28 +1,54 @@
 import React from "react";
 
 function Skills() {
-  const skills = [
-    { name: "HTML", img: "/assets/images/html-logo.png" },
-    { name: "CSS", img: "/assets/images/css-logo.png" },
-    { name: "JavaScript", img: "/assets/images/js-logo.png" },
-    { name: "React", img: "/assets/images/react-logo.png" },
-    { name: "Python", img: "/assets/images/python-logo.png" },
-    { name: "Machine Learning", img: "/assets/images/ml-logo.png" },
-    { name: "Deep Learning", img: "/assets/images/deep-learning-logo.png" },
-    { name: "OpenCV", img: "/assets/images/opencv-logo.webp" },
-    { name: "MySQL", img: "/assets/images/mysql-logo.png" },
-    { name: "Graphic Design", img: "/assets/images/graphic-design-logo.jpeg" },
-    { name: "UI/UX Design", img: "/assets/images/ui-ux-logo.png" }
+  const skillCategories = [
+    {
+      category: "Frontend",
+      img: "/assets/images/frontend-logo.jpg",
+      skills: ["HTML", "CSS", "JavaScript", "React"]
+    },
+    {
+      category: "AI",
+      img: "/assets/images/Ai-logo.webp",
+      skills: ["Machine Learning", "Computer Vision (Basics)", "Deep Learning", "NLP"]
+    },
+    {
+      category: "Databases",
+      img: "/assets/images/database-logo.png",
+      skills: ["MongoDB", "MySQL", "Oracle"]
+    },
+    {
+      category: "Languages",
+      img: "/assets/images/languages-logo.webp",
+      skills: ["C", "C++", "Python"]
+    },
+    {
+      category: "UI/UX",
+      img: "/assets/images/figma-logo.png",
+      skills: ["Figma"]
+    },
+    {
+      category: "Graphic Design",
+      img: "/assets/images/design-logo.png",
+      skills: ["Adobe Illustrator", "Canva", "Photoshop"]
+    }
   ];
 
   return (
     <section id="skills" className="skills">
       <h2>Technical Skills</h2>
       <div className="skills-container">
-        {skills.map((skill, index) => (
-          <div className="skill" key={index}>
-            <img src={skill.img} alt={skill.name} />
-            <span>{skill.name}</span>
+        {skillCategories.map((category, index) => (
+          <div key={index} className="skill-category">
+            <div className="category-header">
+              <img src={category.img} alt={`${category.category} logo`} className="category-logo" />
+              <h3>{category.category}</h3>
+            </div>
+            <ul className="skills-list">
+              {category.skills.map((skill, skillIndex) => (
+                <li key={skillIndex} className="skill-item">{skill}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
