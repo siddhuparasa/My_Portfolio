@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+/* Home */
+.home {
+  text-align: center;
+  padding: 50px;
+}
+
+.profile-pic {
+  width: 200px;
+  border-radius: 50%;
+}
+
+/* About */
+.about {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 50%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+/* Projects */
+.projects {
+  text-align: center;
+  padding: 50px;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Skills */
+.skills {
+  text-align: center;
+  padding: 50px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  color: white;
+}

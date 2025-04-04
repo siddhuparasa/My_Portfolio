@@ -1,0 +1,665 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Added transition for smooth effects */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+/* Navbar Styles */
+.navbar {
+  background: rgba(0, 0, 0, 0.6); /* Transparent glass effect */
+  backdrop-filter: blur(10px); /* Blur effect */
+  color: #ffffff;
+  padding: 12px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-family: "great vibes", cursive;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.05);
+  color: #2d7f9e;
+}
+
+/* Navbar Menu */
+.navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Animated Underline Effect */
+.navbar ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #2d7f9e;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hover Effect */
+.navbar ul li a:hover {
+  color: #2d7f9e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .navbar .logo {
+    font-size: 1.8rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&display=swap');
+
+.home {
+  background-size: cover;
+  background-image: "assets/images/home-bg.webp"; /* Background image */
+  background-position: center;
+  background-attachment: fixed;
+  color: linear-gradient(to right, #000428, #004e92); /* Greenish blue text */
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+}
+
+.home h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff; /* White heading */
+  font-family: "great vibes", cursive;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Added stylish shadow */
+}
+.home-image img {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 60%;
+  box-shadow: 0 4px 10px rgba(170, 160, 160, 0.2);
+  animation: bounce 2s infinite;
+}
+.home p {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* White paragraph */
+  max-width: 800px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.btn {
+  background: linear-gradient(to right, #000428, #004e92); /* Greenish blue button */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.3rem;
+  
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #000428, #5490c5); /* Darker greenish blue hover */
+  transform: scale(1.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home h2 {
+    font-size: 2.8rem;
+  }
+
+  .home p {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+}
+/* About Section */
+.about {
+  background-color: #000; /* Black background */
+  padding: 150px 50px;
+  text-align: center;
+  font-family: "Poppins", sans-serif; /* Clean & modern font */
+}
+
+/* Content Layout */
+.about .content {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Card Styling */
+.about .card {
+  background-color: #111; /* Dark gray for depth */
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+  width: 45%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Heading */
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00aaff; /* Cool blue heading */
+  font-weight: 700;
+  font-family: "Merriweather", serif; /* Elegant serif font */
+}
+
+/* Paragraph Text */
+.card p {
+  font-size: 1.1rem;
+  color: #ddd; /* Light gray for better contrast */
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: "Lora", serif; /* Professional & readable font */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about .card {
+    width: 90%;
+  }
+}
+
+
+/* Skills Section */
+.skills {
+  background-color: #000000; /* Black background */
+  padding: 100px 50px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif; /* Clean & modern font */
+}
+
+.skills h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #00aaff; /* Cool blue heading */
+  font-weight: 700;
+  font-family: "Merriweather", serif; /* Elegant serif font */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Grid Layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Individual Skill Cards */
+.skill {
+  background: linear-gradient(135deg, #111111, #2d7f9e); /* Greenish blue gradient */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+}
+
+/* Skill Logos */
+.skill img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover img {
+  transform: rotate(10deg);
+}
+
+/* Skill Text */
+.skill span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff; /* White skill text */
+  font-family: "Lora", serif; /* Professional & readable font */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills h2 {
+    font-size: 2.2rem;
+  }
+
+  .skill {
+    padding: 15px;
+  }
+
+  .skill img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill span {
+    font-size: 1rem;
+  }
+}
+
+/* Skills Section */
+.skills {
+  background-color: #000000; /* Black background */
+  padding: 100px 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* White heading */
+}
+
+/* Grid Layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Individual Skill Cards */
+.skill {
+  background: linear-gradient(135deg, #111111, #2d7f9e); /* Greenish blue gradient */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Skill Logos */
+.skill img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Skill Text */
+.skill span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff; /* White skill text */
+}
+
+/* Projects Section */
+.projects {
+  background-color: #000; /* Deep black background */
+  padding: 150px 50px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Project Container */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Project Cards */
+.project-card {
+  background: linear-gradient(135deg, #111, #222); /* Dark gradient */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Project Titles */
+.project-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #0099cc; /* Cool blue heading */
+  font-weight: 700;
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+}
+
+/* Project Description */
+.project-card p {
+  font-size: 1.1rem;
+  color: #d4d4d4; /* Light gray for contrast */
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: "Lora", serif;
+}
+
+/* Project Links */
+.project-card a {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #0099cc; /* Matching blue link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  color: #00bbff; /* Lighter blue hover effect */
+  text-decoration: underline;
+}
+
+/* Image Gallery */
+.project-card .gallery {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.project-card .gallery img {
+  height: 150px;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-card .gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@700&display=swap');
+
+/* Contact Section */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 30px;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  min-height: 100vh;
+}
+
+/* Background Card (Glassmorphism Effect) */
+.contact-card {
+  background: rgba(25, 25, 25, 0.85); /* Dark translucent card */
+  padding: 70px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  color: #e0e0e0;
+  backdrop-filter: blur(12px); /* Glass effect */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animated Border Effect */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #06beb6, #ff6a00);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(10px);
+  animation: animated-border 6s infinite linear alternate;
+}
+
+@keyframes animated-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover Scaling */
+.contact-card:hover {
+  transform: scale(1.03);
+}
+
+/* Heading */
+.contact-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #050505; /* Worn-out deep orange */
+  font-family: "Merriweather", serif;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Contact Text */
+.contact-info p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 500;
+  color: #f0f0f0;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Contact Icons */
+.contact-info a img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+ 
+}
+
+/* Neon Glow Hover Effect */
+.contact-info a img:hover {
+  transform: scale(0.8);
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contact-card {
+    padding: 50px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Footer Section */
+footer {
+  background-color: #111111; /* Slightly lighter black footer */
+  color: #ffffff; /* White footer text */
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer ul {
+  margin-top: 10px;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  color: #ffffff; /* White footer links */
+  font-size: 1rem;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
