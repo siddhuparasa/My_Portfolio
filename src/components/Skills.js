@@ -9,7 +9,7 @@ function Skills() {
     },
     {
       category: "AI",
-      img: process.env.PUBLIC_URL + "/assets/images/Ai-logo.webp",  // Updated
+      img: process.env.PUBLIC_URL + "/assets/images/AI-logo.webp",  // Updated
       skills: ["Machine Learning", "Computer Vision (Basics)", "Deep Learning", "NLP"]
     },
     {
