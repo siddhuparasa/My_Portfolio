@@ -10,7 +10,7 @@ function Home() {
         <a href="#contact" className="btn">Get in Touch</a>
       </div>
       <div className="home-image">
-        <img src="/assets/images/boy.webp" alt="Siddhu Parasa" />
+        <img src={process.env.PUBLIC_URL + "/assets/images/boy.webp"} alt="siddhuparasa" />
       </div>
     </section>
   );
