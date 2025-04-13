@@ -8,13 +8,13 @@ function Contact() {
       
       <div className="contact-info">
         <a href="mailto:siddhuparasa99@gmail.com" className="contact-link">
-          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" /> Email Me
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" /> 
         </a>
         <a href="https://www.linkedin.com/in/siddhu-parasa-a82866287/" target="_blank" rel="noopener noreferrer" className="contact-link">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> LinkedIn
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> 
         </a>
         <a href="https://github.com/siddhuparasa" target="_blank" rel="noopener noreferrer" className="contact-link">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" /> GitHub
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
         </a>
       </div>
     </section>
