@@ -4,32 +4,32 @@ function Skills() {
   const skillCategories = [
     {
       category: "Frontend",
-      img: "/assets/images/frontend-logo.jpg",
+      img: process.env.PUBLIC_URL + "/assets/images/frontend-logo.jpg",  // Updated
       skills: ["HTML", "CSS", "JavaScript", "React"]
     },
     {
       category: "AI",
-      img: "/assets/images/Ai-logo.webp",
+      img: process.env.PUBLIC_URL + "/assets/images/Ai-logo.webp",  // Updated
       skills: ["Machine Learning", "Computer Vision (Basics)", "Deep Learning", "NLP"]
     },
     {
       category: "Databases",
-      img: "/assets/images/database-logo.png",
+      img: process.env.PUBLIC_URL + "/assets/images/database-logo.png",  // Updated
       skills: ["MongoDB", "MySQL", "Oracle"]
     },
     {
       category: "Languages",
-      img: "/assets/images/languages-logo.webp",
-      skills: ["C", "C++", "Python"]
+      img: process.env.PUBLIC_URL + "/assets/images/languages-logo.webp",  // Updated
+      skills: ["C", "C++", "Python", "Java"]
     },
     {
       category: "UI/UX",
-      img: "/assets/images/figma-logo.png",
+      img: process.env.PUBLIC_URL + "/assets/images/figma-logo.png",  // Updated
       skills: ["Figma"]
     },
     {
       category: "Graphic Design",
-      img: "/assets/images/design-logo.png",
+      img: process.env.PUBLIC_URL + "/assets/images/design-logo.png",  // Updated
       skills: ["Adobe Illustrator", "Canva", "Photoshop"]
     }
   ];
