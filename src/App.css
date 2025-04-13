@@ -262,7 +262,7 @@ a {
   margin-bottom: 15px;
   color: #00aaff; /* Cool blue heading */
   font-weight: 700;
-  font-family: "Merriweather", serif; /* Elegant serif font */
+  font-family: "Merriweather", serif; /* Stylish font */
 }
 
 /* Paragraph Text */
@@ -271,7 +271,6 @@ a {
   color: #ddd; /* Light gray for better contrast */
   line-height: 1.8;
   font-weight: 400;
-  font-family: "Lora", serif; /* Professional & readable font */
 }
 
 /* Responsive Design */

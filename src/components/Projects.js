@@ -2,10 +2,10 @@ import React from "react";
 
 function Projects() {
   const projects = [
-    { name: "MediDoc", description: "AI-powered medical documentation summarization system.", link: "#" },
+    { name: "MediDoc", description: "AI-powered medical documentation summarization system.", link: "" },
     { name: "WorkGrid (MERN)", description: "Task management & collaboration platform.", link: "#" },
     { name: "AI Job Interview Chatbot", description: "AI chatbot that simulates job interviews.", link: "#" },
-    { name: "Crop & Yield Prediction", description: "ML model to predict crop yield.", link: "#" }
+    { name: "Crop & Yield Prediction", description: "ML model to predict crop yield.", link: "https://colab.research.google.com/drive/13HeuXcxx64wZi2MUu-eIIqhkXzNhhv-c" }
   ];
 
   return (
