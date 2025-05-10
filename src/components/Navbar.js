@@ -14,7 +14,7 @@ function Navbar() {
         <li><a href="#contact">Contact</a></li>
         <li>
           <a 
-            href="https://docs.google.com/document/d/1OyudG-8y4ApmC58QYvzlJgA1X7CkfqW1/edit?usp=sharing&ouid=106323659446476128721&rtpof=true&sd=true"
+            href="https://drive.google.com/file/d/1YCW0zeuSYg_0YcnoHlUCPUS08oHfHDXr/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
