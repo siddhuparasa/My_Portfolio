@@ -23,7 +23,7 @@ a {
 
 /* Navbar Styles */
 .navbar {
-  background: linear-gradient(135deg, #e7e1e1, #02283a);/* Transparent glass effect */
+  background:linear-gradient(135deg, #332c2c, #1a1a1a);/* Transparent glass effect */
   backdrop-filter: blur(10px); /* Blur effect */
   color: #ffffff;
   padding: 12px 0;
