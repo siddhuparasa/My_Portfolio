@@ -2,9 +2,9 @@ import React from "react";
 
 function Projects() {
   const projects = [
-    { name: "MediDoc", description: "AI-powered medical documentation summarization system.", link: "" },
-    { name: "WorkGrid (MERN)", description: "Task management & collaboration platform.", link: "#" },
-    { name: "AI Job Interview Chatbot", description: "AI chatbot that simulates job interviews.", link: "#" },
+    { name: "SmartScene", description: "AI-powered video summarization system.", link: "https://colab.research.google.com/drive/1t-22NLDBH8U7UguQDlvXwzB0aDTb4Jaw?usp=sharing" },
+    { name: "WorkGrid (MERN)", description: "Task management & collaboration platform.", link: "https://workgrid-five.vercel.app/" },
+    { name: "Iphone_Time_Widget", description: "Real-time clocks with stylish design.", link: "https://siddhuparasa.github.io/TimeWidget/" },
     { name: "Crop & Yield Prediction", description: "ML model to predict crop yield.", link: "https://colab.research.google.com/drive/13HeuXcxx64wZi2MUu-eIIqhkXzNhhv-c" }
   ];
 
