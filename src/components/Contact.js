@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Contact() {
   return (
     <section id="contact" className="contact" aria-labelledby="contact-heading">
@@ -54,6 +55,8 @@ function Contact() {
           />
         </a>
       </div>
+
+      
     </section>
   );
 }

@@ -12,6 +12,7 @@ function Navbar() {
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+         <li><a href="AboutMeChatbot">Siddhu's-Assistant</a></li>
         <li>
           <a
             href="https://drive.google.com/file/d/1YCW0zeuSYg_0YcnoHlUCPUS08oHfHDXr/view?usp=sharing"
