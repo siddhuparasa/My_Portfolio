@@ -29,7 +29,7 @@ const AboutMeChatbot = () => {
     },
     experience: {
       examples: ["your experience", "work history", "projects you've worked on"],
-      response: "🛠️ I have worked on AI-driven projects like Smart Scene for video summarization and AI Interview Coach. I am also a Microsoft Learn Student Ambassador and an ACM Winter School participant.",
+      response: "🛠️ I have worked on AI-driven projects like Smart Scene for video summarization and AI Interview Coach,an ACM Winter School participant that makes me to learn about building Explainable AI and Robust intelligence and also i worked as social media and content creator at MLSA (Microsoft) PVPSIT chapter.",
       emotion: "professional"
     },
     projects: {
@@ -44,7 +44,7 @@ const AboutMeChatbot = () => {
     },
     achievements: {
       examples: ["your achievements", "awards", "milestones"],
-      response: "🏆 I was selected for ACM Winter School 2024, became a Microsoft Learn Student Ambassador, and lead social media at PVPSIT.",
+      response: "🏆 I was selected for ACM Winter School 2024 that is on Building Explainable AI and Robust Intelligence , Social media and content creator at Microsoft Learn Student Ambassador at PVPSIT chapter.",
       emotion: "proud"
     },
     hobbies: {
@@ -67,16 +67,7 @@ const AboutMeChatbot = () => {
       response: "📧 You can reach me at siddhuparasa99@gmail.com or connect via LinkedIn: linkedin.com/in/siddhu-parasa.",
       emotion: "friendly"
     },
-    tech_trends: {
-      examples: ["latest in AI", "technology trends", "future of tech"],
-      response: "🌐 AI is rapidly evolving with advances in explainability, multimodal learning, and automation, shaping the future of multiple industries.",
-      emotion: "inspired"
-    },
-    coding_advice: {
-      examples: ["coding tips", "how to improve programming", "learning programming"],
-      response: "📝 Practice regularly, solve problems on platforms like LeetCode, read documentation thoroughly, and contribute to open source.",
-      emotion: "helpful"
-    },
+    
     future_goals: {
     examples: ["your future plans", "what's next?", "goals"],
     response: "🚀 I aim to deepen my expertise in AI and full-stack development, contribute to impactful projects, and eventually start my own tech venture.",
