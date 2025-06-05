@@ -1,4 +1,8 @@
 /* ================ GLOBAL VARIABLES & RESET ================ */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Color System */
   --primary-dark: #0a192f;

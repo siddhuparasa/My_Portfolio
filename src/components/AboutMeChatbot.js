@@ -12,14 +12,52 @@ const AboutMeChatbot = () => {
 
   // Information database
   const aboutMe = {
-    skills: "I'm skilled in Python, C, C++, frontend development (HTML, CSS, JavaScript), backend development (Node.js, Express.js), and building AI-powered solutions. I'm also exploring AI, Machine Learning, and the MERN stack.",
-    experience: "I’ve contributed to real-world mini-projects including Smart Scene (an AI-powered video summarizer and object detection tool), Work Grid (a collaborative task management platform), and an AI-powered job interview preparation coach. I’m also part of the Social Media and Content Creation Teams at Microsoft Learn Student Ambassadors (MLSA) - PVPSIT.",
-    projects: "Check my GitHub (@siddhuparasa) for projects like Smart Scene, Work Grid, and iPhone Time Widget.",
-    education: "I'm pursuing a CSE degree final year at PVPSIT. I will graduate in 2026.",
-    contact: "Email me at siddhuparasa99@gmail.com or connect with me on LinkedIn.",
-    achievements: "  I am  selected to participate in the ACM Winter School 2024 on  BUilding Explainable AI and Robust intelligence systems. I am a Microsoft Learn Student Ambassador (MLSA) social media content creator at PVPSIT chapter.",
-    hobbies: "In my free time, I enjoy exploring new designs of web pages, playing badminton, and playing chess",
-    default: "I can tell you about my skills, experience, projects, education, contact info, achievements, or hobbies. What would you like to know?"
+     skills: {
+      response: "My technical skillset includes:\n\n★ Python, C, C++\n★ Frontend (React, HTML/CSS/JS)\n★ Backend (Node.js, Express)\n★ AI/ML frameworks like TensorFlow, PyTorch,openCV, Scikit-learn, NLP,matplotlib\n★ MERN stack development",
+     
+      emotion: 'proud'
+    },
+    experience: {
+      response: "My journey includes:\n\n🔹 Smart Scene - AI video summarization\n🔹 Work Grid - Collaborative task platform\n🔹 AI Interview Coach\n🔹 Microsoft Learn Student Ambassador\n🔹 ACM Winter School participant",
+      
+      emotion: 'professional'
+    },
+    projects: {
+      response: "Check my GitHub (@siddhuparasa) for:\n\n💻 Smart Scene - AI video analysis\n💻 Work Grid - Team productivity tool\n💻 iPhone Time Widget\n💻 Several AI experiments",
+     
+      emotion: 'enthusiastic'
+    },
+
+    education: {
+      response: "I'm currently in my final year pursuing Computer Science at PVPSIT, graduating in 2026.",
+      followUp: "Want to know about my academic achievements?",
+      emotion: 'nostalgic'
+    },
+    contact: {
+      response: "Let's connect!\n\n📧 siddhuparasa99@gmail.com\n🔗 LinkedIn: linkedin.com/in/siddhu-parasa",
+      followUp: "I respond quickly to emails!",
+      emotion: 'friendly'
+    },
+    achievements: {
+      response: "Some milestones:\n\n🏆 Selected for ACM Winter School 2024\n🏆 Microsoft Learn Student Ambassador\n🏆 Social Media Lead at PVPSIT",
+      followUp: "I'm particularly proud of my AI research!",
+      emotion: 'proud'
+    },
+    hobbies: {
+      response: "When I'm not coding:\n\n♟ Competitive chess player\n🏸 Badminton enthusiast\n🎨 UI/UX design explorer\n📚 Tech blog reader",
+      followUp: "We could discuss chess strategies sometime!",
+      emotion: 'happy'
+    },
+    personal: {
+      response: "I'm passionate about creating technology that solves real problems while being intuitive and beautiful. I believe in continuous learning and pushing boundaries!",
+      followUp: "What drives you?",
+      emotion: 'passionate'
+    },
+    default: {
+      response: "I can share about my:\n\n• Technical skills\n• Projects\n• Experience\n• Education\n• Contact info\n• Achievements\n• Hobbies\n\nWhat interests you most?",
+      followUp: "",
+      emotion: 'neutral'
+    }
   };
 
   const scrollToBottom = () => {
