@@ -16,7 +16,7 @@ function Projects() {
       tags: ["React", "Node.js", "MongoDB"]
     },
     {
-      name: "Job Coach",
+      name: "Job Interview Coach",
       description: "AI-powered job interview coaching platform offering smart AI powered feedback,mock interview practice of CS core concepts like OS,DBMS,Devops,system design,DSA,Machine learning,etc with speech recognition.",
       link: "https://jobcoach-frontend.vercel.app/", 
       tags: ["React.js", "Flask", "Python", "Speech Recognition"]
