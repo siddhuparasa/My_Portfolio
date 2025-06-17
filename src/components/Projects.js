@@ -6,7 +6,7 @@ function Projects() {
     {
       name: "SmartScene",
       description: "AI-powered video summarization system that automatically extracts key moments from long videos and also summarizes them with the object detection.",
-      link: "https://colab.research.google.com/drive/1t-22NLDBH8U7UguQDlvXwzB0aDTb4Jaw?usp=sharing",
+      link: "https://github.com/siddhuparasa/smart_scene",
       tags: ["Python", "OpenCV", "NLP"]
     },
     {

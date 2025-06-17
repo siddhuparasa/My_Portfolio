@@ -11,7 +11,7 @@ function Home() {
       </div>
       <div className="home-image">
         <img
-          src={process.env.PUBLIC_URL + "/assets/images/boy.png"}
+          src={process.env.PUBLIC_URL + "/assets/images/my_pics.png"}
           alt="Siddhu Parasa"
         />
       </div>
