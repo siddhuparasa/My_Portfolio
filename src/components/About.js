@@ -28,7 +28,7 @@ function About() {
               </li>
               <li>
                 <span className="year">2023-present</span>
-                <span className="event">Frontend Development Freelancing</span>
+                <span className="event">MERN Stack Development Freelancing</span>
               </li>
               <li>
                 <span className="year">2022-present</span>
