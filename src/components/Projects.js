@@ -1,39 +1,63 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Projects() {
+  const scrollRef = useRef();
+
+  // Optional: Autoplay scroll every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const offset = direction === "left" ? -320 : 320;
+      scrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
+    }
+  };
+
   const projects = [
     {
       name: "SmartScene",
-      description: "AI-powered video summarization system that automatically extracts key moments from long videos and also summarizes them with the object detection.",
+      description:
+        "AI-powered video summarization system that automatically extracts key moments from long videos and also summarizes them with the object detection.",
       link: "https://github.com/siddhuparasa/smart_scene",
-      tags: ["Python", "OpenCV", "NLP"]
+      tags: ["Python", "OpenCV", "NLP"],
     },
     {
       name: "WorkGrid (MERN)",
-      description: "Full-stack task management platform with real-time collaboration features and team workspaces.",
+      description:
+        "Full-stack task management platform with real-time collaboration features and team workspaces.",
       link: "https://workgrid-five.vercel.app/",
-      tags: ["React", "Node.js", "MongoDB"]
+      tags: ["React", "Node.js", "MongoDB"],
     },
     {
       name: "Job Interview Coach",
-      description: "AI-powered job interview coaching platform offering smart AI powered feedback,mock interview practice of CS core concepts like OS,DBMS,Devops,system design,DSA,Machine learning,etc with speech recognition.",
-      link: "https://jobcoach-frontend.vercel.app/", 
-      tags: ["React.js", "Flask", "Python", "Speech Recognition"]
-},
-    
+      description:
+        "AI-powered job interview coaching platform offering smart AI powered feedback, mock interview practice of CS core concepts like OS, DBMS, DevOps, System Design, DSA, Machine Learning, etc with speech recognition.",
+      link: "https://jobcoach-frontend.vercel.app/",
+      tags: ["React.js", "Flask", "Python", "Speech Recognition"],
+    },
     {
       name: "iPhone Time Widget",
-      description: "Customizable clock widgets with sleek iOS-inspired design and multiple timezone support.",
+      description:
+        "Customizable clock widgets with sleek iOS-inspired design and multiple timezone support.",
       link: "https://siddhuparasa.github.io/TimeWidget/",
-      tags: ["HTML/CSS", "JavaScript", "UI Design"]
+      tags: ["HTML/CSS", "JavaScript", "UI Design"],
     },
     {
       name: "Crop Yield Prediction",
-      description: "Machine learning model that analyzes environmental factors to predict agricultural yields with 92% accuracy.",
+      description:
+        "Machine learning model that analyzes environmental factors to predict agricultural yields with 92% accuracy.",
       link: "https://colab.research.google.com/drive/13HeuXcxx64wZi2MUu-eIIqhkXzNhhv-c",
-      tags: ["Python", "Scikit-learn", "Pandas"]
-    }
+      tags: ["Python", "Scikit-learn", "Pandas"],
+    },
   ];
 
   return (
@@ -42,48 +66,84 @@ function Projects() {
         <h2 className="section-title">
           <span className="accent-text"></span> Featured Projects
         </h2>
-        
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index}>
-              <div className="project-header">
-                <div className="project-icon">
-                  <svg width="40" height="40" viewBox="0 0 40 40">
-                    <rect width="40" height="40" rx="8" fill={`url(#gradient-${index})`} />
-                    <defs>
-                      <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor={index % 2 === 0 ? "#04fcc2" : "#0066ff"} />
-                        <stop offset="100%" stopColor={index % 2 === 0 ? "#0066ff" : "#04fcc2"} />
-                      </linearGradient>
-                    </defs>
-                    <text x="20" y="24" textAnchor="middle" fill="white" fontFamily="Arial" fontSize="16" fontWeight="bold">
-                      {index + 1}
-                    </text>
-                  </svg>
+
+        <div className="projects-scroll-wrapper">
+          <button className="scroll-btn scroll-left" onClick={() => scroll("left")}>
+            <FaChevronLeft />
+          </button>
+          <button className="scroll-btn scroll-right" onClick={() => scroll("right")}>
+            <FaChevronRight />
+          </button>
+
+          <div className="projects-grid" ref={scrollRef}>
+            {projects.map((project, index) => (
+              <div className="project-card" key={index}>
+                <div className="project-header">
+                  <div className="project-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                      <rect
+                        width="40"
+                        height="40"
+                        rx="8"
+                        fill={`url(#gradient-${index})`}
+                      />
+                      <defs>
+                        <linearGradient
+                          id={`gradient-${index}`}
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            stopColor={index % 2 === 0 ? "#04fcc2" : "#0066ff"}
+                          />
+                          <stop
+                            offset="100%"
+                            stopColor={index % 2 === 0 ? "#0066ff" : "#04fcc2"}
+                          />
+                        </linearGradient>
+                      </defs>
+                      <text
+                        x="20"
+                        y="24"
+                        textAnchor="middle"
+                        fill="white"
+                        fontFamily="Arial"
+                        fontSize="16"
+                        fontWeight="bold"
+                      >
+                        {index + 1}
+                      </text>
+                    </svg>
+                  </div>
+                  <h3 className="project-title">{project.name}</h3>
                 </div>
-                <h3 className="project-title">{project.name}</h3>
+
+                <p className="project-description">{project.description}</p>
+
+                <div className="project-tags">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="project-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  aria-label={`View ${project.name} project`}
+                >
+                  <span>View Project</span>
+                  <FiExternalLink className="link-icon" />
+                </a>
               </div>
-              
-              <p className="project-description">{project.description}</p>
-              
-              <div className="project-tags">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="project-tag">{tag}</span>
-                ))}
-              </div>
-              
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="project-link"
-                aria-label={`View ${project.name} project`}
-              >
-                <span>View Project</span>
-                <FiExternalLink className="link-icon" />
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
