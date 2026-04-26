@@ -5,8 +5,8 @@ function Home() {
     <section id="home" className="home">
       <div className="home-content">
         <h2>Siddhu Parasa 👋</h2>
-        <p> Aspiring AI Engineer | Full Stack Developer | AI & ML Enthusiast</p>
-        <p>Building AI-powered solutions to solve real-world problems.</p>
+<p>AI Engineer | LLMs | RAG | Agentic AI | Computer Vision | Deep Learning</p>
+<p>Designing autonomous, AI-driven systems and scalable solutions for real-world applications.</p>
         <a href="#contact" className="btn">Get in Touch</a>
       </div>
       <div className="home-image">

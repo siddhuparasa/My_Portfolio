@@ -24,12 +24,19 @@ function Projects() {
 
   const projects = [
     {
-      name: "SmartScene",
+      name: "Smart Scene (AI Video Summarization)",
       description:
-        "AI-powered video summarization system that automatically extracts key moments from long videos and also summarizes them with the object detection.",
-      link: "https://github.com/siddhuparasa/smart_scene",
-      tags: ["Python", "OpenCV", "NLP"],
+        "AI-powered video summarization system that extracts key moments using object detection. Supports user-centric filtering, allowing users to select specific objects (e.g., 'person') and generate summaries focused only on those targets.",
+      link: "https://colab.research.google.com/drive/1HSPBhufffq4fBkGSN3ZHTX87sr6l-v6n?usp=sharing",
+      tags: ["Python", "YOLOv7", "OpenCV", "Computer Vision"],
     },
+    {
+  name: "SummariV",
+  description:
+    "Built a multimodal RAG system for video question answering, enabling users to query long videos and retrieve precise answers with relevant clips. Integrated Whisper (speech), BLIP (vision), Sentence-BERT + FAISS (retrieval), and FLAN-T5 (generation) for end-to-end intelligent video understanding.",
+  link: "YOUR_GITHUB_LINK_HERE",
+  tags: ["Python", "RAG", "Whisper", "Sentence-BERT", "FAISS", "BLIP", "FLAN-T5"],
+},
     {
       name: "WorkGrid (MERN)",
       description:

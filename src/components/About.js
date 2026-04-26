@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function About() {
   return (
     <section id="about" className="about-section">
@@ -11,10 +10,12 @@ function About() {
         
         <div className="about-grid">
           <div className="about-card highlight-card">
-            <div className="card-icon">👨‍💻</div>
-            <h3 className="card-title">Tech Enthusiast</h3>
+            <div className="card-icon">🤖</div>
+            <h3 className="card-title">AI Engineer</h3>
             <p className="card-text">
-             I’m a final-year B.Tech student with a strong passion for Artificial Intelligence and Machine Learning. Currently, I’m focused on applying these technologies through hands-on projects and continuous learning. I’m also a Full Stack Developer with experience in building MERN-based web applications, aiming to create efficient, scalable, and user-friendly solutions.
+              I build intelligent systems using LLMs, Computer Vision, and Deep Learning to solve real-world problems. My work includes developing AI solutions like MediDoc, a GenAI-based medical documentation system, and Smart Scene, an AI-powered video summarization pipeline.
+
+              I also have experience with Explainable AI techniques such as LIME, SHAP, and Grad-CAM, along with full-stack development using the MERN stack to deploy scalable AI-driven applications.
             </p>
             <div className="accent-line"></div>
           </div>
@@ -23,16 +24,20 @@ function About() {
             <h3 className="card-title">My Journey</h3>
             <ul className="timeline">
               <li>
-                <span className="year">2024-Present</span>
-                <span className="event">AI/ML Research & Development</span>
+                <span className="year">2024 – Present</span>
+                <span className="event">Building AI Systems (LLMs, Computer Vision, Deep Learning)</span>
               </li>
               <li>
-                <span className="year">2023-present</span>
-                <span className="event">MERN Stack Development Freelancing</span>
+                <span className="year">2024 – Present</span>
+                <span className="event">Research & Development in AI (GenAI + NLP)</span>
               </li>
               <li>
-                <span className="year">2022-present</span>
-                <span className="event">DSA and Competitive Programming</span>
+                <span className="year">2023 – Present</span>
+                <span className="event">Full-Stack Development (MERN) & Deployment</span>
+              </li>
+              <li>
+                <span className="year">2022 – Present</span>
+                <span className="event">Data Structures & Algorithmic Problem Solving</span>
               </li>
             </ul>
             <div className="accent-line"></div>
