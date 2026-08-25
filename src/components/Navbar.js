@@ -16,7 +16,7 @@ function Navbar() {
 
         <li>
           <a
-            href="https://drive.google.com/file/d/10f4J3tCKEk9bl8Affav-AVJIzDQriPz1/view?usp=sharing"
+            href="https://drive.google.com/file/d/16MEos7M3azbfkbdJfAv1baHgDXa-roBI/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
