@@ -3,66 +3,115 @@ import React from "react";
 function Skills() {
   const skillCategories = [
     {
-      category: "Frontend",
-      img: process.env.PUBLIC_URL + "/assets/images/frontend-logo.jpg",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Tailwind"]
-    },
-    {
-      category: "Artificial Intelligence",
+      category: "GenAI & Agentic AI",
       img: process.env.PUBLIC_URL + "/assets/images/AI-logo.webp",
-      skills: ["Machine Learning", "Computer Vision", "Deep Learning", "NLP", "TensorFlow", "PyTorch"]
+      skills: [
+        "LLMs",
+        "Automations",
+        "AI agents",
+        "Generative AI",
+        "LangChain",
+        "RAG",
+        "vector databases",
+      ],
     },
+
     {
-      category: "Databases",
-      img: process.env.PUBLIC_URL + "/assets/images/database-logo.png",
-      skills: ["MongoDB", "MySQL"]
+      category: "Computer Vision & Deep Learning",
+      img: process.env.PUBLIC_URL + "/assets/images/AI-logo.webp",
+      skills: [
+        "Computer Vision",
+        "Deep Learning",
+        "OpenCV",
+        "Object Detection",
+        "Image Recognition",
+        "CNN",
+        "YOLO",
+      ],
     },
+
     {
       category: "Programming Languages",
       img: process.env.PUBLIC_URL + "/assets/images/languages-logo.webp",
-      skills: ["C", "C++", "Python", "Java", "JavaScript"]
+      skills: [
+        "Python",
+        "C++",
+        "C",
+      ],
     },
+
     {
-      category: "UI/UX Design",
-      img: process.env.PUBLIC_URL + "/assets/images/figma-logo.png",
-      skills: ["Figma"]
+      category: "Full-Stack Development",
+      img: process.env.PUBLIC_URL + "/assets/images/frontend-logo.jpg",
+      skills: [
+        "React",
+        "JavaScript", 
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+      ],
     },
+
     {
-      category: "Graphic Design",
-      img: process.env.PUBLIC_URL + "/assets/images/design-logo.png",
-      skills: ["Adobe Illustrator", "Canva","photoshop"]
-    }
-  ];
+      category: "Databases & Development Tools",
+      img: process.env.PUBLIC_URL + "/assets/images/database-logo.png",
+      skills: [
+        "MySQL",
+        "Git",
+        "GitHub",
+        "REST APIs",
+        "FastAPI",
+        "Streamlit",
+      ],
+    },
+    ];
 
   return (
     <section id="skills" className="skills">
       <div className="container">
+
         <h2 className="section-title">
-          <span className="accent-text"></span> Technical Skills
+          <span className="accent-text"></span>
+          Technical Skills
         </h2>
-        
+
         <div className="skills-container">
           {skillCategories.map(({ category, img, skills }, index) => (
-            <div key={index} className="skill-category">
+            <div
+              key={index}
+              className="skill-category"
+            >
               <div className="category-header">
-                <img 
-                  src={img} 
-                  alt={`${category} logo`} 
-                  className="category-logo" 
+
+                <img
+                  src={img}
+                  alt={`${category} logo`}
+                  className="category-logo"
                   loading="lazy"
                 />
+
                 <h3>{category}</h3>
+
               </div>
+
               <ul className="skills-list">
                 {skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="skill-item">
-                    <span className="skill-bullet">▹</span> {skill}
+                  <li
+                    key={skillIndex}
+                    className="skill-item"
+                  >
+                    <span className="skill-bullet">
+                      ▹
+                    </span>
+
+                    {skill}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

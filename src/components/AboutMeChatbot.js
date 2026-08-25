@@ -1,165 +1,450 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-const AboutMeChatbot = () => {
+function AboutMeChatbot() {
   const [messages, setMessages] = useState([
     {
-      text: "Hi! I'm Siddhu Parasa. Ask about my skills, experience, or projects.",
-      sender: 'bot'
-    }
+      text: "Hi! I'm Siddhu's portfolio assistant. Ask me about his skills, projects, education, or experience.",
+      sender: "bot",
+    },
   ]);
-  const [input, setInput] = useState('');
-  const [userInteracted, setUserInteracted] = useState(false);
+
+  const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
+  const quickQuestions = [
+    "What are your skills?",
+    "Tell me about your projects",
+    "What is your education?",
+    "How can I contact you?",
+  ];
+
+  /*
+   * Portfolio knowledge
+   */
   const aboutMe = {
-    hi: {
-      examples: ["hi", "hello", "hey", "greetings"],
-      response: "👋 Hello! I'm Siddhu Parasa, a final-year B.Tech student specializing in AI and Full Stack Development.",
-      emotion: "friendly"
-    },
-    about_me: {
-      examples: ["tell me about yourself", "who are you?", "your background"],
-      response: "🤖 I'm Siddhu Parasa, passionate about AI, Machine Learning, and building scalable web applications. I love turning ideas into real software solutions.",
-      emotion: "passionate"
-    },
     skills: {
-      examples: ["your skills", "technical skills", "programming languages you know"],
-      response: "💻 I’m skilled in Python, C, C++, frontend (React, HTML, CSS, JavaScript), backend (Node.js, Express), and AI/ML frameworks like TensorFlow, PyTorch, OpenCV, and Scikit-learn.",
-      emotion: "proud"
+      keywords: [
+        "skill",
+        "skills",
+        "technology",
+        "technologies",
+        "tech stack",
+        "stack",
+        "programming",
+        "languages",
+      ],
+      response:
+        "Siddhu works across GenAI, Agentic AI, RAG, Computer Vision, Deep Learning, and full-stack development. His core technologies include Python, C++, Java, JavaScript, React, Node.js, Flask, LangChain, LLMs, RAG, YOLO, PyTorch, TensorFlow, MongoDB, and MySQL.",
     },
-    experience: {
-      examples: ["your experience", "work history", "projects you've worked on"],
-      response: "🛠️ I have worked on AI-driven projects like Smart Scene for video summarization and AI Interview Coach,an ACM Winter School participant that makes me to learn about building Explainable AI and Robust intelligence and also i worked as social media and content creator at MLSA (Microsoft) PVPSIT chapter.",
-      emotion: "professional"
+
+    genai: {
+      keywords: [
+        "genai",
+        "generative ai",
+        "generative",
+        "agentic",
+        "agentic ai",
+        "llm",
+        "llms",
+        "langchain",
+      ],
+      response:
+        "Siddhu focuses on Generative AI and Agentic AI, including LLM applications, RAG systems, prompt engineering, and LangChain-based AI workflows.",
     },
-    projects: {
-      examples: ["your projects", "portfolio", "show me your work"],
-      response: "📂 You can explore my GitHub (@siddhuparasa) for projects including Smart Scene, Work Grid, and various AI experiments.",
-      emotion: "enthusiastic"
+
+    computerVision: {
+      keywords: [
+        "computer vision",
+        "deep learning",
+        "yolo",
+        "resnet",
+        "cnn",
+        "image",
+        "video",
+      ],
+      response:
+        "His Computer Vision work includes object detection, video understanding, and deep learning. Projects such as Smart Scene use YOLOv7 to identify important objects and generate focused video summaries.",
     },
+
+    resink: {
+      keywords: [
+        "resink",
+        "research assistant",
+        "research paper",
+        "research papers",
+      ],
+      response:
+        "RESINK is an AI research assistant built with LangChain. It analyzes research papers from PDF uploads or URLs, generates 10 structured research insights, and discovers related foundational papers using the Semantic Scholar API.",
+    },
+
+    clario: {
+      keywords: [
+        "clario",
+        "document summarization",
+        "content generation",
+        "claude",
+      ],
+      response:
+        "CLARIO is a Generative AI platform for document summarization and content generation. It uses Claude AI APIs and custom prompt engineering to generate structured and audience-aware responses.",
+    },
+
+    psybot: {
+      keywords: [
+        "psybot",
+        "psycho bot",
+        "psychology chatbot",
+        "psychology",
+      ],
+      response:
+        "PsyBot is a RAG-based psychology chatbot built around a 9,846-entry psychology Q&A dataset. It uses Hugging Face models and semantic retrieval to provide responses grounded in relevant psychological context.",
+    },
+
+    summariv: {
+      keywords: [
+        "summariv",
+        "multimodal",
+        "multimodal rag",
+        "video question",
+        "video qa",
+      ],
+      response:
+        "SummariV is a multimodal RAG system for video question answering. It combines audio, visual, and textual information extracted from videos to retrieve relevant context and generate answers.",
+    },
+
+    smartScene: {
+      keywords: [
+        "smart scene",
+        "video summarization",
+        "yolov7",
+        "object detection",
+        "coco",
+      ],
+      response:
+        "Smart Scene is an AI video summarization system using YOLOv7 object detection. It calculates clip importance using object confidence and object weights against a threshold, while also allowing users to select objects from the COCO dataset for personalized summaries.",
+    },
+
+    flightPlanner: {
+      keywords: [
+        "flight route",
+        "flight planner",
+        "dijkstra",
+        "flight route planner",
+      ],
+      response:
+        "Flight Route Planner is a C++ graph algorithm project that uses Dijkstra's algorithm to calculate both the fastest and cheapest routes between major airports in Andhra Pradesh.",
+    },
+
     education: {
-      examples: ["your education", "academic background", "college"],
-      response: "🎓 I am currently pursuing my final year in Computer Science at PVPSIT, aiming to graduate in 2026.",
-      emotion: "nostalgic"
+      keywords: [
+        "education",
+        "college",
+        "degree",
+        "btech",
+        "b.tech",
+        "study",
+        "academic",
+      ],
+      response:
+        "Siddhu is a final-year B.Tech student in Computer Science at PVPSIT and is focused on AI, GenAI, and software development.",
     },
+
+    experience: {
+      keywords: [
+        "experience",
+        "work experience",
+        "work",
+        "internship",
+        "career",
+      ],
+      response:
+        "Siddhu's experience is primarily project-driven, with work across AI, GenAI, RAG, Computer Vision, and full-stack development. He has also contributed to student technology communities and technical activities.",
+    },
+
     achievements: {
-      examples: ["your achievements", "awards", "milestones"],
-      response: "🏆 I was selected for ACM Winter School 2024 that is on Building Explainable AI and Robust Intelligence , Social media and content creator at Microsoft Learn Student Ambassador at PVPSIT chapter.",
-      emotion: "proud"
+      keywords: [
+        "achievement",
+        "achievements",
+        "award",
+        "awards",
+        "acm",
+        "winter school",
+        "mlsa",
+        "microsoft",
+      ],
+      response:
+        "Siddhu was selected for ACM Winter School 2024 on Building Explainable AI and Robust Intelligence. He has also contributed as a Social Media and Content Creator with the Microsoft Learn Student Ambassadors chapter at PVPSIT.",
     },
-    hobbies: {
-      examples: ["your hobbies", "what do you do in free time?", "interests"],
-      response: "♟️ I enjoy competitive chess, badminton, exploring UI/UX design, and reading tech blogs.",
-      emotion: "happy"
-    },
-    philosophy: {
-      examples: ["your philosophy", "what drives you?", "motivation"],
-      response: "💡 I believe in creating technology that is intuitive, impactful, and accessible. Continuous learning and innovation drive me forward.",
-      emotion: "passionate"
-    },
-    future_goals: {
-      examples: ["your future plans", "what's next?", "goals"],
-      response: "🚀 I aim to deepen my expertise in AI and full-stack development, contribute to impactful projects, and eventually start my own tech venture.",
-      emotion: "hopeful"
-    },
+
     contact: {
-      examples: ["contact info", "how to reach you", "connect with you"],
-      response: "📧 You can reach me at siddhuparasa99@gmail.com or connect via LinkedIn: linkedin.com/in/siddhu-parasa.",
-      emotion: "friendly"
+      keywords: [
+        "contact",
+        "email",
+        "mail",
+        "linkedin",
+        "reach",
+        "connect",
+      ],
+      response:
+        "You can contact Siddhu at siddhuparasa99@gmail.com or connect with him on LinkedIn at linkedin.com/in/siddhu-parasa.",
     },
-    
-    future_goals: {
-    examples: ["your future plans", "what's next?", "goals"],
-    response: "🚀 I aim to deepen my expertise in AI and full-stack development, contribute to impactful projects, and eventually start my own tech venture.",
-    emotion: "hopeful"
-  },
-   strengths: {
-    examples: ["your strengths", "what are you good at?", "best qualities?"],
-    response: "I’m good at analytical thinking, problem-solving, and adapting quickly to new technologies. I’m also a strong communicator and team player.",
-    emotion: "confident"
-  },
-  weaknesses: {
-    examples: ["your weaknesses", "areas to improve", "what do you struggle with?"],
-    response: "Sometimes, I tend to be a perfectionist, which can slow me down. But I’m learning to balance quality with efficiency.",
-    emotion: "honest"
-  },
-    fallback: {
-      examples: [],
-      response: "❓ Sorry, I didn't get that. Ask me about my skills, projects, experience, achievements, hobbies, education, future goals,strengths,weaknesses or anything else for tech insights!",
-      emotion: "neutral"
-    }
+
+    hobbies: {
+      keywords: [
+        "hobby",
+        "hobbies",
+        "interest",
+        "interests",
+        "free time",
+      ],
+      response:
+        "Outside technology, Siddhu enjoys competitive chess, badminton, UI/UX design, and exploring technology-related content.",
+    },
+
+    about: {
+      keywords: [
+        "about you",
+        "about yourself",
+        "who are you",
+        "tell me about you",
+        "tell me about yourself",
+      ],
+      response:
+        "Siddhu is a final-year Computer Science student focused on AI and software engineering. His work combines Generative AI, Agentic AI, RAG, Computer Vision, and full-stack development.",
+    },
   };
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+  /*
+   * Find the best response
+   */
   const getBotResponse = (query) => {
-    if (query.match(/skill|technolog|stack|language/)) return aboutMe.skills;
-    if (query.match(/experience|work|job|internship/)) return aboutMe.experience;
-    if (query.match(/project|github|portfolio/)) return aboutMe.projects;
-    if (query.match(/education|degree|study|college/)) return aboutMe.education;
-    if (query.match(/contact|reach|email|linkedin/)) return aboutMe.contact;
-    if (query.match(/achievement|award|hackathon|recognition/)) return aboutMe.achievements;
-    if (query.match(/hobby|interest|free time|leisure/)) return aboutMe.hobbies;
-    if (query.match(/personal|goal|dream|passion|philosophy|motivation/)) return aboutMe.philosophy;
-    if (query.match(/future|plan|next|goal/)) return aboutMe.future_goals;
-    if (query.match(/tech|technology|ai|trends|future/)) return aboutMe.tech_trends;
-    if (query.match(/coding|programming|learn|improve/)) return aboutMe.coding_advice;
-    return aboutMe.fallback;
+    const normalizedQuery = query
+      .toLowerCase()
+      .trim()
+      .replace(/[?!.,]/g, "");
+
+    if (
+      /^(hi|hello|hey|hii|good morning|good evening)$/.test(
+        normalizedQuery
+      )
+    ) {
+      return "Hi! 👋 Ask me about Siddhu's skills, projects, education, or experience.";
+    }
+
+    if (normalizedQuery.includes("thank")) {
+      return "You're welcome! Feel free to ask anything about the portfolio.";
+    }
+
+    /*
+     * Check specific projects first.
+     */
+    const priorityCategories = [
+      "resink",
+      "clario",
+      "psybot",
+      "summariv",
+      "smartScene",
+      "flightPlanner",
+      "genai",
+      "computerVision",
+      "skills",
+      "education",
+      "experience",
+      "achievements",
+      "contact",
+      "hobbies",
+      "about",
+    ];
+
+    for (const category of priorityCategories) {
+      const data = aboutMe[category];
+
+      const matched = data.keywords.some((keyword) =>
+        normalizedQuery.includes(keyword)
+      );
+
+      if (matched) {
+        return data.response;
+      }
+    }
+
+    return "I can tell you about Siddhu's skills, GenAI and Agentic AI work, projects, education, experience, achievements, or contact information. Try asking one of those.";
   };
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  /*
+   * Scroll to latest message
+   */
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [messages, isTyping]);
 
-    setUserInteracted(true);
-    const trimmedInput = input.trim();
-    const userMessage = { text: trimmedInput, sender: 'user' };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
+  /*
+   * Send message
+   */
+  const handleSend = (messageText = input) => {
+    const trimmedInput = messageText.trim();
+
+    if (!trimmedInput || isTyping) {
+      return;
+    }
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        text: trimmedInput,
+        sender: "user",
+      },
+    ]);
+
+    setInput("");
+    setIsTyping(true);
 
     setTimeout(() => {
-      const query = trimmedInput.toLowerCase();
-      const response = getBotResponse(query);
-      const botMessages = [{ text: response.response, sender: 'bot' }];
-      setMessages(prev => [...prev, ...botMessages]);
-    }, 500);
+      const response = getBotResponse(trimmedInput);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          text: response,
+          sender: "bot",
+        },
+      ]);
+
+      setIsTyping(false);
+    }, 450);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') handleSend();
+  /*
+   * Enter key
+   */
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      handleSend();
+    }
   };
-
-  useEffect(() => {
-    if (userInteracted) scrollToBottom();
-  }, [messages]);
 
   return (
     <div className="chatbot">
-      <div className="chatbot-messages">
-        {messages.map((msg, i) => (
-          <div key={i} className={`message ${msg.sender}`}>
-            {msg.text}
+
+      {/* Header */}
+      <div className="chatbot-header">
+        <div className="chatbot-header-info">
+
+          <div className="chatbot-avatar">
+            S
           </div>
-        ))}
-        <div ref={messagesEndRef} />
+
+          <div>
+            <h3>Siddhu's Assistant</h3>
+
+            <span className="chatbot-status">
+              <span className="status-dot"></span>
+              Available
+            </span>
+          </div>
+
+        </div>
       </div>
 
+      {/* Messages */}
+      <div className="chatbot-messages">
+
+        {messages.length === 1 && (
+          <div className="chatbot-quick-actions">
+            {quickQuestions.map((question) => (
+              <button
+                key={question}
+                onClick={() => handleSend(question)}
+                className="quick-question"
+              >
+                {question}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`message ${message.sender}`}
+          >
+            {message.sender === "bot" && (
+              <div className="message-avatar">
+                S
+              </div>
+            )}
+
+            <div className="message-content">
+              {message.text}
+            </div>
+          </div>
+        ))}
+
+        {isTyping && (
+          <div className="message bot">
+
+            <div className="message-avatar">
+              S
+            </div>
+
+            <div className="message-content typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+          </div>
+        )}
+
+        <div ref={messagesEndRef} />
+
+      </div>
+
+      {/* Input */}
       <div className="chatbot-input">
+
         <input
+          ref={inputRef}
+          type="text"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(event) => setInput(event.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask about me..."
+          placeholder="Ask about Siddhu..."
+          disabled={isTyping}
         />
-        <button onClick={handleSend} aria-label="Send message">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+
+        <button
+          onClick={() => handleSend()}
+          disabled={!input.trim() || isTyping}
+          aria-label="Send message"
+          className="chatbot-send"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+          >
+            <path
+              fill="currentColor"
+              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+            />
           </svg>
         </button>
+
       </div>
+
+      <div className="chatbot-footer">
+        Portfolio assistant
+      </div>
+
     </div>
   );
-};
+}
 
 export default AboutMeChatbot;
